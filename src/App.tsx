@@ -1752,9 +1752,9 @@ function StoreView({ onGoHome, onGoQuizzes }: { onGoHome: () => void, onGoQuizze
             price={500}
             category="Stationery"
             categoryIcon={<Scroll className="w-4 h-4" />}
-            imageSeed="paper"
-            icon={<Scroll className="w-10 h-10" />}
-            onPurchase={() => handlePurchase({ title: "1 Whole Yellow Pad", price: 500, icon: <Scroll className="w-12 h-12" /> })}
+            imageUrl="https://elawtalk.com/wp-content/uploads/2021/01/why-are-legal-pads-yellow.jpg"
+            icon={<Scroll className="w-12 h-12" />}
+            onPurchase={() => handlePurchase({ title: "1 Whole Yellow Pad", price: 500, icon: <Scroll className="w-14 h-14" /> })}
           />
 
           <FeaturedStoreItem 
@@ -1763,9 +1763,9 @@ function StoreView({ onGoHome, onGoQuizzes }: { onGoHome: () => void, onGoQuizze
             price={150}
             category="Artifact"
             categoryIcon={<Zap className="w-4 h-4" />}
-            imageSeed="pen"
-            icon={<Zap className="w-10 h-10" />}
-            onPurchase={() => handlePurchase({ title: "1 Black Pen", price: 150, icon: <Zap className="w-12 h-12" /> })}
+            imageUrl="https://thumbs.dreamstime.com/b/african-man-holding-pen-hand-to-write-blank-white-paper-advertising-mock-up-students-business-man-working-african-117511759.jpg"
+            icon={<Zap className="w-12 h-12" />}
+            onPurchase={() => handlePurchase({ title: "1 Black Pen", price: 150, icon: <Zap className="w-14 h-14" /> })}
           />
 
           <FeaturedStoreItem 
@@ -1774,9 +1774,9 @@ function StoreView({ onGoHome, onGoQuizzes }: { onGoHome: () => void, onGoQuizze
             price={350}
             category="Sustenance"
             categoryIcon={<Flame className="w-4 h-4" />}
-            imageSeed="meal"
-            icon={<Flame className="w-10 h-10" />}
-            onPurchase={() => handlePurchase({ title: "Canteen Meal Voucher", price: 350, icon: <Flame className="w-12 h-12" /> })}
+            imageUrl="https://images.examples.com/wp-content/uploads/2018/04/Meal-Gift-Voucher-Example1.jpg"
+            icon={<Flame className="w-12 h-12" />}
+            onPurchase={() => handlePurchase({ title: "Canteen Meal Voucher", price: 350, icon: <Flame className="w-14 h-14" /> })}
           />
         </div>
 
@@ -1918,13 +1918,14 @@ function StoreView({ onGoHome, onGoQuizzes }: { onGoHome: () => void, onGoQuizze
   );
 }
 
-function FeaturedStoreItem({ title, desc, price, category, categoryIcon, imageSeed, icon, onPurchase }: { 
+function FeaturedStoreItem({ title, desc, price, category, categoryIcon, imageSeed, imageUrl, icon, onPurchase }: { 
   title: string, 
   desc: string, 
   price: number, 
   category: string, 
   categoryIcon: ReactNode,
-  imageSeed: string,
+  imageSeed?: string,
+  imageUrl?: string,
   icon: ReactNode,
   onPurchase: () => void
 }) {
@@ -1937,7 +1938,7 @@ function FeaturedStoreItem({ title, desc, price, category, categoryIcon, imageSe
     >
       <div className="h-48 bg-ink-700 relative flex items-center justify-center">
         <img 
-          src={`https://picsum.photos/seed/${imageSeed}/800/400`} 
+          src={imageUrl ?? (imageSeed ? `https://picsum.photos/seed/${imageSeed}/800/400` : '')} 
           alt={title} 
           className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
           referrerPolicy="no-referrer"
