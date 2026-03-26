@@ -30,7 +30,11 @@ import {
   ShieldCheck,
   Activity,
   Mail,
-  Calendar
+  Calendar,
+  Feather,
+  FlaskRound,
+  Leaf,
+  Sword
 } from "lucide-react";
 
 type View = "onboarding" | "dashboard" | "quiz" | "store" | "profile" | "materials";
@@ -169,7 +173,7 @@ function ProfileView({ onLogout }: { onLogout: () => void, key?: string }) {
               <img 
                 src="https://media.discordapp.net/attachments/1002242021664235602/1486717219336491018/image.png?ex=69c684ce&is=69c5334e&hm=6a5744505b587aace6f60e2ba054df386bfa4f5705b1af5dedd58698f559c0da&=&format=webp&quality=lossless&width=350&height=350" 
                 alt="Profile" 
-                className="w-full h-full rounded-full object-cover grayscale contrast-125"
+                className="w-full h-full rounded-full object-cover"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -317,7 +321,7 @@ function TopBar() {
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-lg border-2 border-crimson-500 p-0.5 flex items-center justify-center">
           <img 
-            src="https://picsum.photos/seed/scholar/100/100" 
+            src="https://media.discordapp.net/attachments/1002242021664235602/1486717219336491018/image.png?ex=69c684ce&is=69c5334e&hm=6a5744505b587aace6f60e2ba054df386bfa4f5705b1af5dedd58698f559c0da&=&format=webp&quality=lossless&width=350&height=350" 
             alt="Profile" 
             className="w-full h-full object-cover rounded-[4px]"
             referrerPolicy="no-referrer"
@@ -352,10 +356,10 @@ function OnboardingView({ onStart }: { onStart: () => void, key?: string }) {
   };
 
   const avatars = [
-    { id: 1, seed: 'scholar1', name: 'Alchemist' },
-    { id: 2, seed: 'scholar2', name: 'Scribe' },
-    { id: 3, seed: 'scholar3', name: 'Sage' },
-    { id: 4, seed: 'scholar4', name: 'Paladin' },
+    { id: 1, icon: FlaskRound, name: 'Alchemist', color: '#22c55e' },
+    { id: 2, icon: Feather, name: 'Scribe', color: '#3b82f6' },
+    { id: 3, icon: Leaf, name: 'Sage', color: '#eab308' },
+    { id: 4, icon: Sword, name: 'Paladin', color: '#94a3b8' },
   ];
 
   const handleLMSConnect = () => {
@@ -543,12 +547,11 @@ function OnboardingView({ onStart }: { onStart: () => void, key?: string }) {
                       onClick={() => setSelectedAvatar(avatar.id)}
                       className={`p-4 rounded-xl border-2 transition-all flex flex-col items-center gap-4 ${selectedAvatar === avatar.id ? 'border-crimson-500 bg-crimson-500/10' : 'border-white/5 bg-ink-800 hover:border-white/20'}`}
                     >
-                      <div className="w-24 h-24 rounded-lg overflow-hidden border border-white/10">
-                        <img 
-                          src={`https://picsum.photos/seed/${avatar.seed}/200/200`} 
-                          alt={avatar.name}
-                          className="w-full h-full object-cover"
-                          referrerPolicy="no-referrer"
+                      <div className="w-24 h-24 rounded-lg overflow-hidden border border-white/10 flex items-center justify-center bg-ink-700/50">
+                        <avatar.icon 
+                          size={64} 
+                          color={avatar.color}
+                          className="drop-shadow-lg"
                         />
                       </div>
                       <span className={`text-sm font-bold uppercase tracking-widest ${selectedAvatar === avatar.id ? 'text-crimson-500' : 'text-crimson-200/40'}`}>
@@ -1058,7 +1061,7 @@ function QuizView({ onBack, onGoStore }: { onBack: () => void, onGoStore: () => 
             animate={{ 
               y: bossHit ? [-15, -45, -15] : [0, -15, 0],
               rotate: bossHit ? [0, 10, -10, 0] : [0, 2, -2, 0],
-              filter: bossHit ? "brightness(1.5) sepia(1) hue-rotate(-50deg) saturate(5)" : "brightness(0.75) grayscale(1) contrast(1.5)"
+              filter: bossHit ? "brightness(1.5) sepia(1) hue-rotate(-50deg) saturate(5)" : "brightness(0.75) contrast(1.5)"
             }}
             transition={{ 
               duration: bossHit ? 0.3 : 4, 
@@ -1069,7 +1072,7 @@ function QuizView({ onBack, onGoStore }: { onBack: () => void, onGoStore: () => 
           >
             <div className="w-48 h-48 bg-gradient-to-t from-crimson-900/40 to-transparent rounded-full blur-3xl absolute -bottom-8 left-1/2 -translate-x-1/2" />
             <img 
-              src="https://picsum.photos/seed/wraith/400/400" 
+              src="https://media.discordapp.net/attachments/1002242021664235602/1486725853051355166/vecteezy_silhouette-of-scary-monster_63174783.png?ex=69c68cd9&is=69c53b59&hm=4ea4cb0aae7109afa8a26d8ad3b58b0ab42568176a81a7e9aaa22b637ba38e2f&=&format=webp&quality=lossless&width=1233&height=1233" 
               alt="Boss" 
               className={`w-40 h-40 object-cover rounded-full border-4 border-crimson-500/20 shadow-[0_0_50px_rgba(211,47,47,0.3)] transition-colors duration-300 ${bossHit ? 'border-amber-500' : ''}`}
               referrerPolicy="no-referrer"
