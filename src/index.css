@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-crimson-50: #fff2f0;
+  --color-crimson-100: #ffb3ac;
+  --color-crimson-200: #e4beba;
+  --color-crimson-500: #d32f2f;
+  --color-crimson-900: #8d1d20;
+  
+  --color-ink-900: #181212;
+  --color-ink-800: #251e1e;
+  --color-ink-700: #3a3333;
+}
+
+@layer base {
+  body {
+    @apply bg-ink-900 text-crimson-200 font-sans antialiased overflow-x-hidden;
+  }
+
+  /* Global Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-700 rounded-full transition-all;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-crimson-500/40;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #3a3333 #181212;
+  }
+}
+
+.text-gradient-crimson {
+  background: linear-gradient(to bottom, #ede0df, #e4beba);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-crimson-gradient {
+  background: linear-gradient(to bottom, #d32f2f, #8d1d20);
+}
+
+/* Utility to hide scrollbars but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
