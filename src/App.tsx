@@ -167,7 +167,7 @@ function ProfileView({ onLogout }: { onLogout: () => void, key?: string }) {
           >
             <div className="w-28 h-28 rounded-full border-2 border-crimson-500/30 p-1 bg-ink-800">
               <img 
-                src="https://picsum.photos/seed/scholar/200/200" 
+                src="https://media.discordapp.net/attachments/1002242021664235602/1486717219336491018/image.png?ex=69c684ce&is=69c5334e&hm=6a5744505b587aace6f60e2ba054df386bfa4f5705b1af5dedd58698f559c0da&=&format=webp&quality=lossless&width=350&height=350" 
                 alt="Profile" 
                 className="w-full h-full rounded-full object-cover grayscale contrast-125"
                 referrerPolicy="no-referrer"
