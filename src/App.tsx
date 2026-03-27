@@ -171,7 +171,7 @@ function ProfileView({ onLogout }: { onLogout: () => void, key?: string }) {
           >
             <div className="w-28 h-28 rounded-full border-2 border-crimson-500/30 p-1 bg-ink-800">
               <img 
-                src="https://media.discordapp.net/attachments/1002242021664235602/1486717219336491018/image.png?ex=69c684ce&is=69c5334e&hm=6a5744505b587aace6f60e2ba054df386bfa4f5705b1af5dedd58698f559c0da&=&format=webp&quality=lossless&width=350&height=350" 
+                src="https://i.imgur.com/l41ysGG.png" 
                 alt="Profile" 
                 className="w-full h-full rounded-full object-cover"
                 referrerPolicy="no-referrer"
@@ -321,7 +321,7 @@ function TopBar() {
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-lg border-2 border-crimson-500 p-0.5 flex items-center justify-center">
           <img 
-            src="https://media.discordapp.net/attachments/1002242021664235602/1486717219336491018/image.png?ex=69c684ce&is=69c5334e&hm=6a5744505b587aace6f60e2ba054df386bfa4f5705b1af5dedd58698f559c0da&=&format=webp&quality=lossless&width=350&height=350" 
+            src="https://i.imgur.com/l41ysGG.png" 
             alt="Profile" 
             className="w-full h-full object-cover rounded-[4px]"
             referrerPolicy="no-referrer"
@@ -1072,7 +1072,7 @@ function QuizView({ onBack, onGoStore }: { onBack: () => void, onGoStore: () => 
           >
             <div className="w-48 h-48 bg-gradient-to-t from-crimson-900/40 to-transparent rounded-full blur-3xl absolute -bottom-8 left-1/2 -translate-x-1/2" />
             <img 
-              src="https://media.discordapp.net/attachments/1002242021664235602/1486725853051355166/vecteezy_silhouette-of-scary-monster_63174783.png?ex=69c68cd9&is=69c53b59&hm=4ea4cb0aae7109afa8a26d8ad3b58b0ab42568176a81a7e9aaa22b637ba38e2f&=&format=webp&quality=lossless&width=1233&height=1233" 
+              src="https://i.imgur.com/oQQ1CfD.png" 
               alt="Boss" 
               className={`w-40 h-40 object-cover rounded-full border-4 border-crimson-500/20 shadow-[0_0_50px_rgba(211,47,47,0.3)] transition-colors duration-300 ${bossHit ? 'border-amber-500' : ''}`}
               referrerPolicy="no-referrer"
