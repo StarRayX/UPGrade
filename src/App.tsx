@@ -1072,7 +1072,7 @@ function QuizView({ onBack, onGoStore }: { onBack: () => void, onGoStore: () => 
           >
             <div className="w-48 h-48 bg-gradient-to-t from-crimson-900/40 to-transparent rounded-full blur-3xl absolute -bottom-8 left-1/2 -translate-x-1/2" />
             <img 
-              src="./boss.png" 
+              src="./bossmf.png" 
               alt="Boss" 
               className={`w-40 h-40 object-cover rounded-full border-4 border-crimson-500/20 shadow-[0_0_50px_rgba(211,47,47,0.3)] transition-colors duration-300 ${bossHit ? 'border-amber-500' : ''}`}
               referrerPolicy="no-referrer"
